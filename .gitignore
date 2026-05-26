@@ -15,3 +15,9 @@ node_modules/
 
 dist-js
 dist
+
+# Built installer + standalone exe artifacts (output of `npm run tauri build`)
+/stem-recorder-setup.exe
+/stem-recorder.msi
+/stem-recorder.exe
+/WebView2Loader.dll
