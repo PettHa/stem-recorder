@@ -28,6 +28,10 @@ const REC_BITS: u16 = 32;
 const REC_FMT: SampleFormat = SampleFormat::Float;
 const CHANNEL_CAP: usize = 64; // ~1-2 s of audio buffers in flight
 
+/// Refuse to start recording when the output disk has less than this many bytes free.
+/// 5 GB ≈ ~3.5 hours of stereo 48 kHz f32 + headroom for whatever else the user is doing.
+const MIN_FREE_BYTES: u64 = 5 * 1024 * 1024 * 1024;
+
 type SampleTxSlot = Arc<Mutex<Option<mpsc::SyncSender<Vec<f32>>>>>;
 
 #[derive(Default)]
@@ -294,6 +298,21 @@ pub fn start_record(args: StartRecordArgs) -> Result<(), String> {
 
     let dir = PathBuf::from(&args.output_dir);
     create_dir_all(&dir).map_err(|e| format!("create_dir_all: {e}"))?;
+
+    // Guardrail: refuse to start if the output volume is nearly full. Hitting
+    // mid-recording disk-full silently truncates stems (writes start failing
+    // but the audio callback can't slow down — samples just vanish).
+    let free = fs4::available_space(&dir)
+        .map_err(|e| format!("disk space check failed for {}: {e}", dir.display()))?;
+    if free < MIN_FREE_BYTES {
+        return Err(format!(
+            "Refusing to record — only {:.2} GB free on {}, need ≥ {:.0} GB.",
+            free as f64 / 1_073_741_824.0,
+            dir.display(),
+            MIN_FREE_BYTES as f64 / 1_073_741_824.0,
+        ));
+    }
+
     let base = if args.filename_base.trim().is_empty() {
         Local::now().format("%Y%m%d-%H%M%S").to_string()
     } else {
