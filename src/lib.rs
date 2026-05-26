@@ -5,13 +5,21 @@ use tauri::{
 
 mod commands;
 
+#[cfg(target_os = "windows")]
+mod loopback;
+
 pub use commands::*;
 
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
-    Builder::new("mic-recorder")
+    Builder::new("stem-recorder")
         .invoke_handler(tauri::generate_handler![
-            commands::start_recording,
-            commands::stop_recording
+            commands::list_devices,
+            commands::start_monitor,
+            commands::stop_monitor,
+            commands::start_record,
+            commands::stop_record,
+            commands::get_stats,
+            commands::verify_wav,
         ])
         .build()
 }

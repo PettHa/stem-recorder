@@ -1,3 +1,11 @@
 [default]
-description = "Default permissions for the plugin"
-permissions = ["allow-start-recording", "allow-stop-recording"]
+description = "Default permissions for the stem-recorder plugin"
+permissions = [
+  "allow-list-devices",
+  "allow-start-monitor",
+  "allow-stop-monitor",
+  "allow-start-record",
+  "allow-stop-record",
+  "allow-get-stats",
+  "allow-verify-wav",
+]

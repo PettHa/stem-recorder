@@ -1,20 +1,21 @@
 {
-  "name": "tauri-plugin-mic-recorder-api",
-  "version": "2.0.0",
-  "author": "ayangweb",
-  "description": "Supports recording audio using a microphone and saving the recorded data as a file.",
+  "name": "stem-recorder-api",
+  "version": "0.1.0",
+  "author": "PettHa",
+  "description": "TypeScript bindings for the stem-recorder Tauri plugin (mic + system audio loopback).",
   "keywords": [
     "audio-recording",
-    "microphone-recording",
+    "loopback",
+    "wasapi",
     "tauri",
     "tauri-plugin"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayangweb/tauri-plugin-mic-recorder.git"
+    "url": "git+https://github.com/PettHa/stem-recorder.git"
   },
-  "homepage": "https://github.com/ayangweb/tauri-plugin-mic-recorder#readme",
-  "bugs": "https://github.com/ayangweb/tauri-plugin-mic-recorder/issues",
+  "homepage": "https://github.com/PettHa/stem-recorder#readme",
+  "bugs": "https://github.com/PettHa/stem-recorder/issues",
   "license": "MIT",
   "type": "module",
   "types": "./dist-js/index.d.ts",
@@ -32,15 +33,13 @@
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "pnpm build",
-    "pretest": "pnpm build",
-    "release": "release-it"
+    "pretest": "pnpm build"
   },
   "dependencies": {
     "@tauri-apps/api": ">=2.0.0-beta.6"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
-    "release-it": "^18.1.2",
     "rollup": "^4.9.6",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"

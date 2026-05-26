@@ -1,9 +1,16 @@
 ## Default Permission
 
-Default permissions for the plugin
+Default permissions for the stem-recorder plugin
 
-- `allow-start-recording`
-- `allow-stop-recording`
+#### This default permission set includes the following:
+
+- `allow-list-devices`
+- `allow-start-monitor`
+- `allow-stop-monitor`
+- `allow-start-record`
+- `allow-stop-record`
+- `allow-get-stats`
+- `allow-verify-wav`
 
 ## Permission Table
 
@@ -17,25 +24,12 @@ Default permissions for the plugin
 <tr>
 <td>
 
-`mic-recorder:allow-start-recording`
+`stem-recorder:allow-get-stats`
 
 </td>
 <td>
 
-Enables the start_recording command without any pre-configured scope.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-`mic-recorder:deny-start-recording`
-
-</td>
-<td>
-
-Denies the start_recording command without any pre-configured scope.
+Enables the get_stats command without any pre-configured scope.
 
 </td>
 </tr>
@@ -43,12 +37,12 @@ Denies the start_recording command without any pre-configured scope.
 <tr>
 <td>
 
-`mic-recorder:allow-stop-recording`
+`stem-recorder:deny-get-stats`
 
 </td>
 <td>
 
-Enables the stop_recording command without any pre-configured scope.
+Denies the get_stats command without any pre-configured scope.
 
 </td>
 </tr>
@@ -56,12 +50,155 @@ Enables the stop_recording command without any pre-configured scope.
 <tr>
 <td>
 
-`mic-recorder:deny-stop-recording`
+`stem-recorder:allow-list-devices`
 
 </td>
 <td>
 
-Denies the stop_recording command without any pre-configured scope.
+Enables the list_devices command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:deny-list-devices`
+
+</td>
+<td>
+
+Denies the list_devices command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:allow-start-monitor`
+
+</td>
+<td>
+
+Enables the start_monitor command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:deny-start-monitor`
+
+</td>
+<td>
+
+Denies the start_monitor command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:allow-start-record`
+
+</td>
+<td>
+
+Enables the start_record command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:deny-start-record`
+
+</td>
+<td>
+
+Denies the start_record command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:allow-stop-monitor`
+
+</td>
+<td>
+
+Enables the stop_monitor command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:deny-stop-monitor`
+
+</td>
+<td>
+
+Denies the stop_monitor command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:allow-stop-record`
+
+</td>
+<td>
+
+Enables the stop_record command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:deny-stop-record`
+
+</td>
+<td>
+
+Denies the stop_record command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:allow-verify-wav`
+
+</td>
+<td>
+
+Enables the verify_wav command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`stem-recorder:deny-verify-wav`
+
+</td>
+<td>
+
+Denies the verify_wav command without any pre-configured scope.
 
 </td>
 </tr>
