@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="coats" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B57A4A"></stop>
+      <stop offset="14.28%" stop-color="#6E8C4F"></stop>
+      <stop offset="28.57%" stop-color="#4F8A8A"></stop>
+      <stop offset="42.85%" stop-color="#6878A6"></stop>
+      <stop offset="57.14%" stop-color="#9C6A8E"></stop>
+      <stop offset="71.42%" stop-color="#A87850"></stop>
+      <stop offset="85.71%" stop-color="#5A8C70"></stop>
+      <stop offset="100%" stop-color="#8E6E96"></stop>
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="64" height="64" rx="11.5" ry="11.5" fill="#141312"></rect>
+
+  <text x="32" y="46.5" text-anchor="middle" font-family="&#39;JetBrains Mono&#39;, ui-monospace, &#39;Cascadia Mono&#39;, Menlo, Consolas, monospace" font-weight="800" font-size="48" letter-spacing="-2" fill="url(#coats)">m</text>
+</svg>

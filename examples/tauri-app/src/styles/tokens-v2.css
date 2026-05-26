@@ -1,0 +1,117 @@
+/* tokens-v2.css — cc-fleet-v2 only.
+
+   Three shifts vs. tokens.css:
+
+   1. CORAL → INK. The brand color has retired. Per the readme and
+      shell.jsx — "the $ prompt stays ink — it's the cli speaker, not
+      a crew member". The user IS the $. So every previously-coral
+      surface (primary buttons, terminal cursor, prompt char, code
+      keyword accents, active tab underlines, hover tints) collapses
+      to ink. The crew (the 8 sess-N hues) remains the brand identity,
+      worn by the wordmark + session palette. No singular accent.
+
+   2. STATUS PALETTE EARTHED. Pure web red/green/amber were fighting
+      the cream identity. New values sit in the low-chroma earthy
+      family — working sage, awaiting burnt-orange, blocked brick.
+
+   3. METER-MID SPLIT FROM AWAITING. Awaiting (orange, "type now") and
+      meter-mid (ochre, "filling up") used to share a hue. They are
+      different signals — split into distinct tones.
+
+   AI shimmer (✦ ✎ ∿ cycling through 8 crew hues) is wired in by the
+   companion overlay script — see cc-fleet-v2-overlay.js.
+*/
+
+/* ──────────────── LIGHT MODE ──────────────── */
+
+:root,
+.theme-light {
+  /* CREW MAPPING — canvas Landing.html names. Mirror of tokens.css --sess-N
+     so the verbatim-ported canvas CSS resolves. */
+  --mc-rust:   #B57A4A;
+  --mc-fern:   #6E8C4F;
+  --mc-tarn:   #4F8A8A;
+  --mc-scree:  #6878A6;
+  --mc-plum:   #9C6A8E;
+  --mc-ochre:  #A87850;
+  --mc-moss:   #5A8C70;
+  --mc-lupine: #8E6E96;
+
+  /* BRAND → INK. Everything previously coral collapses here.
+     The leader writes in pen; the crew wears color. */
+  --brand:             #1A1918;
+  --brand-deep:        #000000;
+  --brand-soft:        #5C5750;
+  --brand-tint:        rgba(26, 25, 24, 0.06);
+  --brand-tint-strong: rgba(26, 25, 24, 0.12);
+
+  /* Terminal prompt + cursor are ink — matches the "$" leader convention. */
+  --term-prompt:       #1A1918;
+
+  /* STATUS — earthy palette */
+
+  /* working — sage (same hue family as sess-2). Calmest status hue, also a
+     recognized crew member. */
+  --status-working:        #6E8C4F;
+  --status-working-soft:   #C9D7B0;
+  --status-working-tint:   rgba(110, 140, 79, 0.10);
+  --status-working-band:   rgba(110, 140, 79, 0.16);
+
+  /* awaiting — burnt orange. "type something now". Distinct enough from
+     ink that the eye reads it as an alarm. */
+  --status-awaiting:       #C77A2F;
+  --status-awaiting-soft:  #ECCFA3;
+  --status-awaiting-tint:  rgba(199, 122, 47, 0.10);
+  --status-awaiting-band:  rgba(199, 122, 47, 0.16);
+
+  /* blocked — brick red. Deliberate alarm, not Bootstrap red. */
+  --status-blocked:        #B5463A;
+  --status-blocked-soft:   #ECC0B7;
+  --status-blocked-tint:   rgba(181, 70, 58, 0.10);
+  --status-blocked-band:   rgba(181, 70, 58, 0.18);
+
+  /* idle unchanged */
+
+  /* meter-mid — ochre yellow. Split from awaiting. */
+  --meter-mid:             #B58A2A;
+  --hl-ratio:              #8A6A1F;
+
+  /* BLOCKER row + modal warning background — tie to brick, not coral. */
+  --attention-bg:          #F4DDD3;
+}
+
+/* ──────────────── DARK MODE ──────────────── */
+
+.theme-dark {
+  /* BRAND → cream (the dark-mode equivalent of "ink") */
+  --brand:             #EEECE2;
+  --brand-deep:        #FFFFFF;
+  --brand-soft:        #B5AFA3;
+  --brand-tint:        rgba(238, 236, 226, 0.06);
+  --brand-tint-strong: rgba(238, 236, 226, 0.12);
+
+  --term-prompt:       #EEECE2;
+
+  /* working — sage lifted */
+  --status-working:        #9CC080;
+  --status-working-soft:   #2F4528;
+  --status-working-tint:   rgba(156, 192, 128, 0.12);
+  --status-working-band:   rgba(156, 192, 128, 0.18);
+
+  /* awaiting — orange lifted */
+  --status-awaiting:       #E0A058;
+  --status-awaiting-soft:  #4A3820;
+  --status-awaiting-tint:  rgba(224, 160, 88, 0.12);
+  --status-awaiting-band:  rgba(224, 160, 88, 0.18);
+
+  /* blocked — brick lifted */
+  --status-blocked:        #DC6F60;
+  --status-blocked-soft:   #4A2622;
+  --status-blocked-tint:   rgba(220, 111, 96, 0.12);
+  --status-blocked-band:   rgba(220, 111, 96, 0.20);
+
+  --meter-mid:             #D8B045;
+  --hl-ratio:              #D8B45A;
+
+  --attention-bg:          #3A2620;
+}

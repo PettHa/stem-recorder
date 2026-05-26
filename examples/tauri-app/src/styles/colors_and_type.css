@@ -1,0 +1,101 @@
+/* colors_and_type.css — semantic re-exports for the marmotcrew design system.
+   This file is the public face; the actual variable values live in tokens.css.
+   Consumers can include either one — but tokens.css must be loaded first.
+
+   For brand authoring, prefer the semantic names below (h1, h2, etc) over
+   the raw tokens, so theme changes propagate cleanly. */
+
+@import url('tokens.css');
+
+/* ── Type roles ────────────────────────────────────────────────────── */
+.h1, h1 {
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--content-primary);
+  line-height: 1.15;
+}
+.h2, h2 {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--content-primary);
+  line-height: 1.2;
+}
+.h3, h3 {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--content-primary);
+  line-height: 1.3;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--content-muted);
+}
+.section-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--content-primary);
+}
+.body {
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--content-secondary);
+}
+.body-sm {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--content-secondary);
+}
+.code, code {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--content-primary);
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}
+.brand-mark {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--brand);
+}
+
+/* ── Semantic color aliases ───────────────────────────────────────── */
+:root,
+.theme-light,
+.theme-dark {
+  /* foreground tiers */
+  --fg-1: var(--content-primary);
+  --fg-2: var(--content-secondary);
+  --fg-3: var(--content-muted);
+  --fg-4: var(--content-faint);
+
+  /* background tiers */
+  --bg-1: var(--surface-primary);
+  --bg-2: var(--surface-secondary);
+  --bg-3: var(--surface-tertiary);
+  --bg-0: var(--surface-sunk);
+
+  /* line tiers */
+  --line-1: var(--border-strong);
+  --line-2: var(--border-default);
+  --line-3: var(--border-soft);
+  --line-4: var(--border-faint);
+
+  /* accent */
+  --accent:        var(--brand);
+  --accent-deep:   var(--brand-deep);
+  --accent-soft:   var(--brand-soft);
+  --accent-tint:   var(--brand-tint);
+}

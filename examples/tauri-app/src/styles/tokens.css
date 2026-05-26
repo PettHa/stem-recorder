@@ -1,0 +1,188 @@
+/* marmotcrew — tokens lifted from GAIN-MSP design system
+   Coral + cream, CLI-inspired. Light + dark. */
+
+:root,
+.theme-light {
+  /* surfaces (light) */
+  --surface-primary:   #EEECE2;
+  --surface-secondary: #F5F3E9;
+  --surface-tertiary:  #FAF8EF;
+  --surface-sunk:      #E6E3D6;
+
+  /* content (light) */
+  --content-primary:   #1A1918;
+  --content-secondary: #5C5750;
+  --content-muted:     #8B857C;
+  --content-faint:     #B5AFA3;
+
+  /* borders */
+  --border-strong:     #C8C2B3;
+  --border-default:    #D8D2C3;
+  --border-soft:       #E2DCCD;
+  --border-faint:      #EAE4D6;
+
+  /* brand */
+  --brand:             #D37F69;
+  --brand-deep:        #B56858;
+  --brand-soft:        #E8A896;
+  --brand-tint:        rgba(211,127,105,.10);
+  --brand-tint-strong: rgba(211,127,105,.18);
+
+  /* status — green / amber / red / grey
+     working / awaiting / blocked / idle */
+  --status-working:        #059669;
+  --status-working-soft:   #B7E3D0;
+  --status-working-tint:   rgba(5,150,105,.10);
+  --status-working-band:   rgba(5,150,105,.14);
+
+  --status-awaiting:       #D97706;
+  --status-awaiting-soft:  #F3D6A4;
+  --status-awaiting-tint:  rgba(217,119,6,.10);
+  --status-awaiting-band:  rgba(217,119,6,.14);
+
+  --status-blocked:        #DC2626;
+  --status-blocked-soft:   #F2B8B8;
+  --status-blocked-tint:   rgba(220,38,38,.10);
+  --status-blocked-band:   rgba(220,38,38,.16);
+
+  --status-idle:           #8B857C;
+  --status-idle-soft:      #CFC9BC;
+  --status-idle-tint:      rgba(139,133,124,.08);
+  --status-idle-band:      rgba(139,133,124,.10);
+
+  /* token meter (lo/mid/hi) — coded blue/amber/red but blue tuned warm */
+  --meter-lo:              #2F6B8F;
+  --meter-mid:             #D97706;
+  --meter-hi:              #DC2626;
+
+  /* inline highlights inside strip values */
+  --hl-issue:              #2F6B8F;   /* #NNN */
+  --hl-mention:            #7A3FA3;   /* @name */
+  --hl-ratio:              #8B6F00;   /* N/M */
+
+  /* attention */
+  --attention-bg:          #FCE8E2;
+
+  /* terminal */
+  --term-bg:               #1A1918;
+  --term-fg:               #D8D2C3;
+  --term-faint:            #6E6961;
+  --term-prompt:           #D37F69;
+  --term-green:            #5FB58A;
+  --term-amber:            #E0A04E;
+  --term-blue:             #6A9CC2;
+  --term-magenta:          #B68FB5;
+
+  /* shadows */
+  --shadow-card:           0 1px 2px rgba(26,25,24,.06), 0 0 0 1px var(--border-faint);
+  --shadow-elev:           0 12px 32px -8px rgba(26,25,24,.25), 0 0 0 1px var(--border-default);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', ui-monospace, monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.theme-dark {
+  --surface-primary:   #1A1918;
+  --surface-secondary: #242220;
+  --surface-tertiary:  #2D2A27;
+  --surface-sunk:      #141312;
+
+  --content-primary:   #EEECE2;
+  --content-secondary: #B5AFA3;
+  --content-muted:     #807A70;
+  --content-faint:     #5C5750;
+
+  --border-strong:     #3D3934;
+  --border-default:    #2F2C28;
+  --border-soft:       #282521;
+  --border-faint:      #221F1B;
+
+  --brand:             #E08F77;
+  --brand-deep:        #C8755C;
+  --brand-soft:        #6F4438;
+  --brand-tint:        rgba(224,143,119,.10);
+  --brand-tint-strong: rgba(224,143,119,.18);
+
+  --status-working:        #34B083;
+  --status-working-soft:   #2A4A3D;
+  --status-working-tint:   rgba(52,176,131,.12);
+  --status-working-band:   rgba(52,176,131,.18);
+
+  --status-awaiting:       #E8A04E;
+  --status-awaiting-soft:  #4A3A20;
+  --status-awaiting-tint:  rgba(232,160,78,.12);
+  --status-awaiting-band:  rgba(232,160,78,.18);
+
+  --status-blocked:        #E85A5A;
+  --status-blocked-soft:   #4A2424;
+  --status-blocked-tint:   rgba(232,90,90,.12);
+  --status-blocked-band:   rgba(232,90,90,.20);
+
+  --status-idle:           #807A70;
+  --status-idle-soft:      #2F2C28;
+  --status-idle-tint:      rgba(128,122,112,.10);
+  --status-idle-band:      rgba(128,122,112,.12);
+
+  --meter-lo:              #6A9CC2;
+  --meter-mid:             #E8A04E;
+  --meter-hi:              #E85A5A;
+
+  --hl-issue:              #6A9CC2;
+  --hl-mention:            #B68FB5;
+  --hl-ratio:              #D8B45A;
+
+  --attention-bg:          #3A1F1A;
+
+  --term-bg:               #141312;
+  --term-fg:               #C8C2B3;
+  --term-faint:            #5C5750;
+  --term-prompt:           #E08F77;
+  --term-green:            #6FBE94;
+  --term-amber:            #E8A04E;
+  --term-blue:             #7AA8CE;
+  --term-magenta:          #C29DC2;
+
+  --shadow-card:           0 1px 2px rgba(0,0,0,.45), 0 0 0 1px var(--border-default);
+  --shadow-elev:           0 18px 40px -10px rgba(0,0,0,.7), 0 0 0 1px var(--border-strong);
+}
+
+/* base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--sans);
+  color: var(--content-primary);
+  background: var(--surface-primary);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.mono { font-family: var(--mono); font-feature-settings: 'liga' 0, 'calt' 0; }
+
+/* ---- per-session identity palette (8 hues, low-chroma) ---- */
+.theme-light {
+  --sess-1: #B57A4A;  /* clay */
+  --sess-2: #6E8C4F;  /* sage */
+  --sess-3: #4F8A8A;  /* teal */
+  --sess-4: #6878A6;  /* dusk */
+  --sess-5: #9C6A8E;  /* mauve */
+  --sess-6: #A87850;  /* amber-clay */
+  --sess-7: #5A8C70;  /* moss */
+  --sess-8: #8E6E96;  /* heather */
+}
+.theme-dark {
+  --sess-1: #D89A6A;
+  --sess-2: #9CC080;
+  --sess-3: #6FB2B2;
+  --sess-4: #8B9CD0;
+  --sess-5: #C690B9;
+  --sess-6: #D9A075;
+  --sess-7: #7CB594;
+  --sess-8: #B894C0;
+}
